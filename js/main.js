@@ -12,7 +12,7 @@ $(document).ready(function() {
 
 	sID = setInterval(function(){
 		$(".slidenav__item--next").trigger("click");
-	}, 10000);
+	}, 6000);
 
 	// Select all links with hashes
 	$('a[href*="#"]')
@@ -66,34 +66,46 @@ $(document).ready(function() {
 		}, 3000);
 	});
 
-	// OWLCAROUSEL
-	var owl = $('#dispositivosCarousel');
-	owl.owlCarousel({
-		loop:true,
-		center:true,
-		items:1
+	// HOVER CUBOS
+	$('.ch-item').hover(function(){
+		$(this).addClass('flipcube');
+	},function(){
+		$(this).removeClass('flipcube');
 	});
 
-	$('.arrow-carousel.arrow-left').click(function() {
-		owl.trigger('prev.owl.carousel');
-	})
-	$('.arrow-carousel.arrow-right').click(function() {
-		owl.trigger('next.owl.carousel');
-	})
+	$('#cubo1').appear(function() {
+		$(this).toggleClass('flipcube');
+		backToNormal = setTimeout(function(){
+			$('#cubo1').toggleClass('flipcube');
+		}, 4000);
+	});
 
-	// VIDEOSLIDER
-	var videoslider = $('#videoslider');
-	videoslider.owlCarousel({
+	//TILT JS
+	$('.js-tilt').tilt();
+
+	// OWLCAROUSEL
+	var dispositivoslider = $('#dispositivosCarousel');
+	dispositivoslider.owlCarousel({
 		center: true,
 		items: 1,
 		loop:true,
 		margin: 0
 	});
 
+	$('.arrow-dispositivo.arrow-left').click(function() {
+		dispositivoslider.trigger('prev.owl.carousel');
+	})
+	$('.arrow-dispositivo.arrow-right').click(function() {
+		dispositivoslider.trigger('next.owl.carousel');
+	})
+
 	// TESTIMONIOS
 	var testimonioslider = $('#testimonioslider');
 	testimonioslider.owlCarousel({
 		loop:true,
+		autoplay:true,
+		autoplayTimeout:5000,
+		autoplayHoverPause:false,
 		responsiveClass:true,
 		responsive:{
 			0:{
@@ -109,6 +121,21 @@ $(document).ready(function() {
 	    	}
 		}
 	});
+
+	// VIDEOSLIDER
+	var videoslider = $('#videoslider');
+	videoslider.owlCarousel({
+		center: true,
+		items: 1,
+		loop:true,
+		margin: 0
+	});
+	$('.arrow-tutorial.arrow-left').click(function() {
+		videoslider.trigger('prev.owl.carousel');
+	})
+	$('.arrow-tutorial.arrow-right').click(function() {
+		videoslider.trigger('next.owl.carousel');
+	})
 
 	//FUNCTION TO GET AND AUTO PLAY YOUTUBE VIDEO FROM DATATAG
 	function autoPlayYouTubeModal(){
@@ -163,12 +190,12 @@ $(document).ready(function() {
             success: function(res) {
                 if (res == "OK") {
                     $("#resultform").html('<strong>Mensaje Enviado!</strong>').fadeIn();
-                    $("#resultform").delay(10000).fadeOut();
+                    $("#resultform strong").delay(6000).fadeOut();
                     $('#form-contacto')[0].reset();
                 }
                 if (res == "error") {
                     $("#resultform").html('<strong>Hubo un error!</strong>').fadeIn();
-                    $("#resultform").delay(10000).fadeOut();
+                    $("#resultform strong").delay(6000).fadeOut();
                     $('#form-contacto')[0].reset();
                 }
             }

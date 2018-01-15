@@ -187,7 +187,7 @@
 
             sID = setInterval(function(){
                 $(".slidenav__item--next").trigger("click");
-            }, 10000);
+            }, 6000);
         }
 
     };

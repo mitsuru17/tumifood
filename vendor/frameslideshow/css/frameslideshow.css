@@ -49,8 +49,8 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 	margin: -30px 0 0 -30px;
 	pointer-events: none;
 	border-radius: 50%;
-	opacity: 0.4;
-	background: var(--color-link);
+	opacity: 0.6;
+	background: url('../../../img/preloader.png');
 	animation: loaderAnim 0.7s linear infinite alternate forwards;
 }
 
@@ -127,13 +127,6 @@ a:focus {
 }
 
 .slide__img {
-	/*position: absolute;
-	top: -200px;
-	left: -200px;
-	width: calc(100% + 400px);
-	height: calc(100% + 400px);
-	background-size: cover;
-	background-position: 50% 50%;*/
 	position: absolute;
     top: 0;
     left: 0;
@@ -197,10 +190,8 @@ a:focus {
 	position: relative;
 	font-size: 1em;
 	font-weight: bold;
-	/*padding: 1em 2em;*/
 	display: block;
 	color: var(--color-slink);
-	/*background: var(--color-slink-bg);*/
 	transition: color 0.3s, background 0.3s;
 }
 .googleplay{
@@ -225,14 +216,7 @@ a:focus {
 	/*background: var(--color-slink-hover-bg);*/
 }
 
-@media screen and (min-width: 55em) {
-
-}
-
 @media screen and (max-width: 55em) {
-	/*body {
-		padding: 0 0 4em 0;
-	}*/
 	.slide__desc {
 		font-size: 1em;
 	}

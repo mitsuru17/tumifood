@@ -14,6 +14,7 @@ if ($_POST['verificacion'] != ""){
 
 	$To_Email_Adress = 'hola@tumipos.com';
 
+
 	$form = "NOMBRE: "  .$nombre    ."<br>\n";
 	$form .= "NEGOCIO: "  .$negocio    ."<br>\n";
 	$form .= "TELEFONO: "  .$telefono    ."<br>\n";

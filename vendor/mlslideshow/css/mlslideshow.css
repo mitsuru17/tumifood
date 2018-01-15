@@ -134,8 +134,10 @@
 
 .slideshow__nav--arrows {
 	font-size: 4em;
-	right: 4.6em;
-    bottom: 0.2em;
+	/*right: 4.6em;*/
+   /* bottom: 0.2em;*/
+    right: 5.3em;/*CAMBIO*/
+    bottom: 0.3em;/*CAMBIO*/
 }
 
 /* Media query for smaller screens (general elements) */
